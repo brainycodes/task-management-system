@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+session_start();
+include('./db_connect.php');
+  ob_start();
+  // if(!isset($_SESSION['system'])){
+
+    $system = $conn->query("SELECT * FROM system_settings")->fetch_array();
+    foreach($system as $k => $v){
+      $_SESSION['system'][$k] = $v;
+    }
+  // }
+  ob_end_flush();
+?>
+<?php 
+if(isset($_SESSION['login_id']))
+header("location:index.php?page=home");
+
+?>
 
 <head>
 
@@ -9,7 +27,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Forgot Password</title>
+    <?php 
+    date_default_timezone_set("Asia/Manila");
+
+    ob_start();
+    $title = isset($_GET['page']) ? ucwords(str_replace("_", ' ', $_GET['page'])) : "Home";
+    ?>
+
+    <title><?php echo $title ?> | <?php echo $_SESSION['system']['name'] ?></title>
+    <?php ob_end_flush() ?>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,7 +44,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -31,15 +57,17 @@
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0 shadow-lg my-5" style="height: 65vh;">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-password-image">
+                                <img src="img/7573.jpg" alt="" class="">
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
+                                        <h1 class="h4 text-gray-100 mb-2">Forgot Your Password?</h1>
                                         <p class="mb-4">We get it, stuff happens. Just enter your email address below
                                             and we'll send you a link to reset your password!</p>
                                     </div>
@@ -49,16 +77,13 @@
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address...">
                                         </div>
-                                        <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                        <a href="login.php" class="btn btn-primary btn-user btn-block">
                                             Reset Password
                                         </a>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="login.html">Already have an account? Login!</a>
+                                        <a class="small" href="login.php">Already have an account? Login!</a>
                                     </div>
                                 </div>
                             </div>

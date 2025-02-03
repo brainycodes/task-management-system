@@ -36,8 +36,8 @@
                 <div id="collapseProfile" class="collapse" aria-labelledby="headingProfile" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Profile Components:</h6>
-                        <a class="collapse-item" href="buttons.html">View Profile</a>
-                        <a class="collapse-item" href="cards.html">Edit Profile</a>
+                        <a class="collapse-item" href="profile.php">View Profile</a>
+                        <a class="collapse-item" href="#">Edit Profile</a>
                     </div>
                 </div>
             </li>
@@ -54,7 +54,6 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Task Components:</h6>
                         <a class="collapse-item" href="./task_list.php?page=task_list">View Tasks</a>
-                        <a class="collapse-item" href="#">Complete Task</a>
                         <a class="collapse-item" href="#">Completed Tasks</a>
                     </div>
                 </div>

@@ -125,7 +125,7 @@ $title = isset($_GET['page']) ? ucwords(str_replace("_", ' ', $_GET['page'])) : 
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="forgot-password.php">Forgot Password?</a>
                                     </div>
                                 </div>
                             </div>
