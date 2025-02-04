@@ -59,7 +59,8 @@
 					<label for="">Status</label>
 					<select name="status" id="status" class="custom-select custom-select-sm">
 						<option value="0">Pending</option>
-						<option value="3">On-Hold</option>
+						<option value="1">Started</option>
+						<option value="2">On-Progress</option>
 						<option value="5">Done</option>
 					</select>
 				</div>

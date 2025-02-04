@@ -37,7 +37,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Profile Components:</h6>
                         <a class="collapse-item" href="profile.php">View Profile</a>
-                        <a class="collapse-item" href="#">Edit Profile</a>
+                        <a class="collapse-item" href="#">Profile Settings</a>
                     </div>
                 </div>
             </li>

@@ -45,15 +45,9 @@
                                 <div class="col-md-4">
                                     <!-- Dropdown Card Example -->
                                     <div class="card shadow mb-4">
-                                        <!-- Card Header - Dropdown -->
-                                        <div
-                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 class="m-0 font-weight-bold text-primary">Your Profile</h6>
-                                        </div>
                                         <!-- Card Body -->
                                         <div class="card-body">
                                             <img src="img/undraw_profile.svg" alt="" class="img-fluid">
-                                            <p class="text-center h2 mt-3">Solomon Zion</p>
                                         </div>
                                     </div>
                                 </div>
@@ -70,12 +64,11 @@
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                       <p> <b>Name: </b></p>
-                                                       <p><b>Email: </b></p>
+                                                       <p> <b>First Name: </b> <br><?php echo ucwords($_SESSION['login_firstname']) ?></p>
+                                                       <p><b>Email Address: </b><br><?php echo ucwords($_SESSION['login_email']) ?></p>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <p> <b>Name: </b></p>
-                                                        <p><b>Email: </b></p>
+                                                        <p> <b>Last Name: </b> <br><?php echo ucwords($_SESSION['login_lastname']) ?></p>
                                                     </div>
                                                 </div>
                                             </div>

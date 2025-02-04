@@ -66,7 +66,8 @@ foreach($qry as $k => $v){
 					<label for="">Status</label>
 					<select name="status" id="status" class="custom-select custom-select-sm">
 						<option value="0" <?php echo isset($status) && $status == 0 ? 'selected' : '' ?>>Pending</option>
-						<option value="3" <?php echo isset($status) && $status == 3 ? 'selected' : '' ?>>On-Hold</option>
+						<option value="1" <?php echo isset($status) && $status == 2 ? 'selected' : '' ?>>Started</option>
+						<option value="2" <?php echo isset($status) && $status == 2 ? 'selected' : '' ?>>On-Progress</option>
 						<option value="5" <?php echo isset($status) && $status == 5 ? 'selected' : '' ?>>Done</option>
 					</select>
 				</div>

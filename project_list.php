@@ -147,6 +147,33 @@
             <!-- End of Main Content -->
 
            <?php include_once "footer.php" ?>
+
+           <script>
+	$(document).ready(function(){
+		$('#list').dataTable()
+	
+	$('.delete_project').click(function(){
+	_conf("Are you sure to delete this project?","delete_project",[$(this).attr('data-id')])
+	})
+	})
+	function delete_project($id){
+		start_load()
+		$.ajax({
+			url:'ajax.php?action=delete_project',
+			method:'POST',
+			data:{id:$id},
+			success:function(resp){
+				if(resp==1){
+					alert_toast("Data successfully deleted",'success')
+					setTimeout(function(){
+						location.reload()
+					},1500)
+
+				}
+			}
+		})
+	}
+</script>
            
 </body>
 
